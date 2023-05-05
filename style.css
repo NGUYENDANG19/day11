@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	height: 100vh;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	
+		background: radial-gradient(1.5em 6.28571em at 1.95em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(1.5em 6.28571em at -0.45em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 1.5em 5.5em, radial-gradient(2.3em 4.57143em at 2.99em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(2.3em 4.57143em at -0.69em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 2.3em 4em, radial-gradient(3.5em 6.28571em at 4.55em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(3.5em 6.28571em at -1.05em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 3.5em 5.5em, radial-gradient(#15ffa5, #00ced1);
+		background-color: mediumspringgreen;
+		background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em, 3.5em 11em, 100% 100%;
+		background-repeat: repeat;
+	  }
+
+button {
+	height: 10em;
+  width: 10em;
+	padding: 8px 16px;
+	font-size: 18px;
+	border-radius: 50% ;
+	border: none;
+	outline: none;
+	color: white;
+	cursor: pointer;
+	margin: 0 10px;
+}
+
+button.success {
+	background-color: rgb(0, 128, 0);
+}
+button.warning {
+	background-color: rgb(255, 165, 0);
+}
+button.error {
+	background-color: rgb(255, 0, 0);
+}
+
+#toasts {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.toast {
+	padding: 80px;
+	border-radius: 4px;
+	overflow: hidden;
+	margin-bottom: 30px;
+	animation: show_slide 2s ease forwards;
+	display: flex;
+	align-items: center;
+	border-left: 10px solid;
+}
+
+.toast.success {
+	background-color: rgba(0, 128, 0, 0.4);
+	border-color: rgb(0, 128, 0);
+}
+
+.toast.warning {
+	background: rgba(255, 165, 0, 0.4);
+	border-color: rgb(255, 165, 0);
+}
+
+.toast.error {
+	background-color: rgba(255, 0, 0, 0.4);
+	border-color: rgb(255, 0, 0);
+}
+
+.toast i {
+	font-size: 28px;
+	color: white;
+}
+
+.toast .msg {
+	padding: 0 20px;
+	font-size: 16px;
+	color: white;
+}
+
+.countdown {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	z-index: 1;
+	animation: countdown 4s linear forwards;
+}
+
+.toast.success .countdown {
+	background-color: rgb(0, 128, 0);
+}
+
+.toast.warning .countdown {
+	background-color: rgb(255, 165, 0);
+}
+
+.toast.error .countdown {
+	background-color: rgb(255, 0, 0);
+}
+
+@keyframes countdown {
+	20% {
+		width: 100%;
+	}
+	100% {
+		width: 0;
+	}
+}
+
+@keyframes show_slide {
+	0% {
+		transform: translateX(100%);
+	}
+	40% {
+		transform: translateX(-10%);
+	}
+	80% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-10px);
+	}
+}
+
+@keyframes hide_slide {
+	0% {
+		transform: translateX(-10px);
+	}
+	40% {
+		transform: translateX(0%);
+	}
+	80% {
+		transform: translateX(-10%);
+	}
+	100% {
+		transform: translateX(120%);
+	}
+}
